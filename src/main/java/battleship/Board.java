@@ -16,8 +16,8 @@ public class Board {
         
     }
     private void initializeBoard() {
-        for (int i = 0 ;i > 10 ; i++) {
-            for (int ii = 0 ;ii > 10 ; ii++) {
+        for (int i = 0 ;i < 10 ; i++) {
+            for (int ii = 0 ;ii < 10 ; ii++) {
                 board[i][ii] = '0';
             }
         }
@@ -71,13 +71,15 @@ public class Board {
 
     public boolean shoot(int row, int col) {
         
-        if (row < 0 || row > Size || col < 0 || col > Size) {
+        if (row < 0 || row >= Size || col < 0 || col >= Size) {
+            return false;
+        }
+        // Sjekk om cellen allerede er truffet eller markert som bom
+        if (board[row][col] == 'X' || board[row][col] == 'M') {
             return false;
         }
         
-        if (board[row][col] != '0') {
-            return false;
-        }
+    
         if (board[row][col] == 'S') {
             board[row][col] = 'X';
 
@@ -90,7 +92,7 @@ public class Board {
                         segment = row - ship.getRow();  // Vertikal avstand fra skipets start
                     }
                     ship.hit(segment);  // Registrer treff på dette segmentet
-                    return true;        // Returner at vi traff
+                    return true;        // Returner true hvis treff
                 }
             }
         }
@@ -102,7 +104,7 @@ public class Board {
 
     public boolean isPositionOnShip(Ship ship, int row, int col) {
         if (ship.isHorizontal()) {
-            return (row == ship.getRow() && col >= ship.getCol() && col < (ship.getCol() + ship.getLength()) );
+            return (row == ship.getRow() && col >= ship.getCol() && col < (ship.getCol() + ship.getLength()) ); //utenfor vertikalt /horisontral
         }
         else {
             return (col == ship.getCol() && row >= ship.getRow() && row < (ship.getRow() + ship.getLength()) );

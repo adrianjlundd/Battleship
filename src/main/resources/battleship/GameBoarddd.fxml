@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="gameBoardPane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="601.0" spacing="15" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="battleship.GameBoardController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <Label fx:id="playerOneLabel" text="Player 1: [Name]" />
+      <Label fx:id="playerTwoLabel" text="Player 2: [Name]" />
+      <Label fx:id="currentPlayerLabel" text="Current Player: [Name]" />
+      <!-- Spilleren sitt eget brett -->
+      <Label text="Your Board" />
+      <HBox alignment="CENTER">
+         <children>
+            <GridPane fx:id="playerBoard" prefHeight="350.0" prefWidth="350.0">
+               <columnConstraints>
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </HBox>
+
+      <!-- Motstanderens brett -->
+      <Label text="Opponent's Board" />
+      <HBox alignment="CENTER">
+         <children>
+            <GridPane fx:id="opponentBoard" prefHeight="350.0" prefWidth="350.0">
+               <columnConstraints>
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+                  <ColumnConstraints prefWidth="35.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+                  <RowConstraints prefHeight="35.0" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </HBox>
+
+      <Button onAction="#onBackToMenu" text="Back to Menu" />
+   </children>
+</VBox>
