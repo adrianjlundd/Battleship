@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="gameBoardPane" alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0" spacing="10" 
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="battleship.GameBoardController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <Label fx:id="playerOneLabel" text="Player 1: [Name]" />
+      <Label fx:id="playerTwoLabel" text="Player 2: [Name]" />
+      <Label fx:id="currentPlayerLabel" text="Current Player: [Name]" />
+      
+      <HBox spacing="10" alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" spacing="5" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Opponent's Board" />
+                  <GridPane fx:id="opponentBoard" prefHeight="250.0" prefWidth="250.0">
+                     <columnConstraints>
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+
+            <Separator orientation="VERTICAL" prefHeight="250.0" prefWidth="2.0" />
+
+            <VBox alignment="CENTER" spacing="5" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Your Board" />
+                  <GridPane fx:id="playerBoard" prefHeight="250.0" prefWidth="250.0">
+                     <columnConstraints>
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                        <ColumnConstraints prefWidth="25.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                        <RowConstraints prefHeight="25.0" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+
+      <Button onAction="#onBackToMenu" text="Back to Menu" />
+   </children>
+</VBox>
